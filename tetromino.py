@@ -40,7 +40,7 @@ class Block (pg.sprite.Sprite):
 class Tetromino:
     def __init__(self, tetris, current=True):
         self.tetris = tetris
-        self.shape = random.choice(list(TETROMINOES.keys()))
+        self.shape = TetrominoBag().get_next_tetromino()
         self.blocks = [Block(self, pos) for pos in TETROMINOES[self.shape]]
         self.landing = False
         self.current = current
@@ -70,3 +70,16 @@ class Tetromino:
     def update (self):
         self.move(direction='down')
 
+class TetrominoBag:
+    def __init__(self):
+        self.tetrominos = ['T', 'O', 'J', 'L', 'I', 'S', 'Z']
+        self.shuffle()
+
+    def shuffle(self):
+        random.shuffle(self.tetrominos)
+
+    def get_next_tetromino(self):
+        if len(self.tetrominos) == 0:
+            self.shuffle()
+
+        return self.tetrominos.pop()
