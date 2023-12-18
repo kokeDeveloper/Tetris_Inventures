@@ -21,6 +21,9 @@ class Text:
         self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.8),
                             text=f'{self.app.tetris.score}', fgcolor = 'white',
                             size = TILE_SIZE * 2.8)
+        self.font.render_to(self.app.screen, (WIN_W * 0.64, WIN_H * 0.4),
+                            text=f'{self.app.tetris.level}', fgcolor = 'white',
+                            size = TILE_SIZE * 2.8)
         
 class Tetris:
     def __init__(self, app):
@@ -30,14 +33,23 @@ class Tetris:
         self.tetromino = Tetromino(self)
         self.next_tetromino = Tetromino(self, current = False)
         self.speed_up = False
-        
+        self.level = 1
+        self.lines_to_next_level = 10
         self.score = 0
         self.full_lines = 0
-        self.points_per_lines = {0: 0, 1: 100, 2: 300, 3: 700, 4: 1500}
+        self.points_per_lines = {0: 0, 1: 100, 2: 300, 3: 500, 4: 800}
+        self.completed_lines_count = 0
         
     def get_score(self):
         self.score += self.points_per_lines[self.full_lines]
         self.full_lines = 0
+    
+    def up_level(self):
+        
+        if self.completed_lines_count >= self.lines_to_next_level:
+            self.level += 1
+            self.lines_to_next_level += 10
+            print("Subiendo de nivel...")
     
     def check_full_lines(self):
         row = FIELD_H - 1
@@ -51,6 +63,8 @@ class Tetris:
             if sum(map(bool, self.field_array[y])) < FIELD_W:
                 row -= 1
             else:
+                print(f"Línea completa en la fila {y}!")
+                self.completed_lines_count += 1
                 for x in range(FIELD_W):
                     self.field_array[row][x].alive = False 
                     self.field_array[row][x] = 0
@@ -104,6 +118,7 @@ class Tetris:
             self.tetromino.update()
             self.check_tetromino_landing()
             self.get_score()
+            self.up_level()
         self.sprite_group.update()
 
     def draw(self):

@@ -1,7 +1,7 @@
 from settings import *
 from tetris import Tetris, Text
 import sys
-import pathlib
+
 
 
 class App:
