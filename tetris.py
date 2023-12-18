@@ -84,6 +84,11 @@ class Tetris:
             pg.time.wait(300)
             return True
     
+    def hard_drop(self):
+        while not self.tetromino.landing:
+            self.tetromino.move(direction='down')
+        self.check_tetromino_landing()
+    
     def check_tetromino_landing(self):
         if self.tetromino.landing:
             if self.is_game_over():

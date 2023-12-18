@@ -41,6 +41,8 @@ class App:
                 sys.exit()
             elif event.type == pg.KEYDOWN:
                 self.tetris.control(pressed_key=event.key)
+                if event.key == pg.K_SPACE:  
+                    self.tetris.hard_drop()   
             elif event.type == self.user_event:
                 self.anim_trigger = True
             elif event.type == self.fast_user_event:
