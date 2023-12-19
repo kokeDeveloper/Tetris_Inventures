@@ -1,6 +1,6 @@
 # Tetris by Yorch
 
-¡Hola amigos de Inventures!, bienvenidos al emocionante mundo de Tetris 🚀
+¡Hola amigos de Inventures!, bienvenidos al emocionante mundo de Tetris 🚀 Solo para valientes y amantes de la adrenalina 
 
 ## Requisitos Previos
 - Asegúrate de tener Python instalado en tu máquina. Si no lo tienes, ¡descárgalo [aquí](https://www.python.org/downloads/) y únete al club del 🐍!
