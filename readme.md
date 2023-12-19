@@ -1,6 +1,6 @@
-# Tetris Pygame
+# Tetris by Yorch
 
-¡Bienvenido al emocionante mundo de Tetris en Pygame! 🚀
+¡Hola amigos de Inventures!, bienvenidos al emocionante mundo de Tetris 🚀
 
 ## Requisitos Previos
 - Asegúrate de tener Python instalado en tu máquina. Si no lo tienes, ¡descárgalo [aquí](https://www.python.org/downloads/) y únete al club del 🐍!
@@ -18,3 +18,19 @@ Instala las dependencias necesarias con el siguiente comando:
 ```bash
 pip install -r requirements.txt
 ```
+# Hora de Jugar
+
+Ejecuta el juego usando el siguiente comando:
+```bash
+python main.py
+```
+Prepárate para mover y rotar esas piezas con las teclas de flecha!
+
+←: Mover a la izquierda
+→: Mover a la derecha
+↑: Rotar la pieza
+↓: Caída rápida
+espace: Hard Drop
+
+## ¡Diviértete!
+¡Ahora estás listo para disfrutar del clásico juego de Tetris en tu propio espacio! ¡Que la diversión comience y que las piezas caigan a tu favor! 🎮
