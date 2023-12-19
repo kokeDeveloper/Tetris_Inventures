@@ -26,11 +26,11 @@ python main.py
 ```
 Prepárate para mover y rotar esas piezas con las teclas de flecha!
 
-←: Mover a la izquierda
-→: Mover a la derecha
-↑: Rotar la pieza
-↓: Caída rápida
-espace: Hard Drop
+- ←: Mover a la izquierda
+- →: Mover a la derecha
+- ↑: Rotar la pieza
+- ↓: Caída rápida
+- espace: Hard Drop
 
 ## ¡Diviértete!
 ¡Ahora estás listo para disfrutar del clásico juego de Tetris en tu propio espacio! ¡Que la diversión comience y que las piezas caigan a tu favor! 🎮
